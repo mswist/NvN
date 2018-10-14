@@ -7,9 +7,10 @@ var express = require('express'),
 	ioRoute = require('./routes/ioRoute');
 
 var app = express();
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
 //strat http Server
-var server = app.listen(3000, function () {
+var server = app.listen(server_port, function () {
 	console.log('Ninja server started');
 });
 
